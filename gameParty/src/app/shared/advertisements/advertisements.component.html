@@ -1,3 +1,10 @@
-<p>
-  advertisements works!
-</p>
+<ion-card class="ad-card bg-dark">
+  <img [src]="imageUrl" alt="Anuncio" class="card-img-top">
+  <ion-card-header>
+    <ion-card-title class="text-light" >{{ title }}</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <p class="text-light">{{ description }}</p>
+    <button class="btn btn-warning text-dark w-100" (click)="redirectToAd()">Ver más</button>
+  </ion-card-content>
+</ion-card>

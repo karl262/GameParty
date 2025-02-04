@@ -4,10 +4,23 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">dashboard</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding">
+  <h2 class="text-center">Anuncios Relevantes</h2>
+
+  <div class="container">
+      <app-advertisements
+        title="Oferta Especial"
+        description="Aprovecha nuestro descuento del 50% en productos seleccionados."
+        imageUrl=""
+        link="https://mi-tienda.com/ofertas"
+      />
+        <app-advertisements
+          title="Nuevo Producto"
+          description="Descubre nuestra nueva línea de productos eco-friendly."
+          imageUrl=""
+          link="https://mi-tienda.com/nuevo-producto"
+        />
+
+  </div>
 </ion-content>
+

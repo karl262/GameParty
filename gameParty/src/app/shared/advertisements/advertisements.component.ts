@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-advertisements',
@@ -6,10 +6,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./advertisements.component.scss'],
   standalone: false
 })
-export class AdvertisementsComponent  implements OnInit {
+export class AdvertisementsComponent {
+
+  @Input() title: string = 'Anuncio Destacado';
+  @Input() description: string = 'Descripción breve del anuncio.';
+  @Input() imageUrl: string = '';
+  @Input() link: string = '/';
+
+  redirectToAd(): void {
+    window.location.href = this.link;
+  }
 
   constructor() { }
 
-  ngOnInit() {}
 
 }
