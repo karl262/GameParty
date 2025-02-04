@@ -1,0 +1,7 @@
+{
+  "name": "gameParty",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
