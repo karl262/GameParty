@@ -13,10 +13,9 @@ export interface MenuItem {
 export class MenuService {
   // Menú inferior (principal)
   bottomMenuItems: MenuItem[] = [
-    { title: 'Inicio', icon: 'home-outline', route: '/home' },
-    { title: 'Productos', icon: 'grid-outline', route: '/productos' },
-    { title: 'Pedidos', icon: 'cart-outline', route: '/pedidos' },
-    { title: 'Compras', icon: 'receipt-outline', route: '/compras' }
+    { title: 'Inicio', icon: 'home-outline', route: '/dashboard' },
+    { title: 'Social', icon: 'people-outline', route: '/social' },
+    { title: 'Buscar', icon: 'search-outline', route: '/pedidos' }
   ];
 
   constructor(private navCtrl: NavController) {}

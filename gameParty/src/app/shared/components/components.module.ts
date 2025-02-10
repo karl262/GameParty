@@ -5,6 +5,8 @@ import {FooterComponent} from "../footer/footer.component";
 import {NavbarComponent} from "../navbar/navbar.component";
 import {AdvertisementsComponent} from "../advertisements/advertisements.component";
 import {IonicModule} from "@ionic/angular";
+import {RouterModule} from "@angular/router";
+
 
 
 
@@ -17,7 +19,8 @@ import {IonicModule} from "@ionic/angular";
   ],
   imports: [
     CommonModule,
-      IonicModule
+      IonicModule,
+      RouterModule
   ],
   exports: [
     CardComponent,
