@@ -1,13 +1,57 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>register</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content class="ion-padding">
+  <ion-grid class="register-container">
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="12" size-md="8" size-lg="6">
+        <div class="form-container">
+          <h2 class="title">Crear una <br> <span>cuenta nueva</span></h2>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">register</ion-title>
-    </ion-toolbar>
-  </ion-header>
+          <ion-item>
+            <ion-label position="floating">Nombre</ion-label>
+            <ion-input type="text" [(ngModel)]="nombre"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating">Email</ion-label>
+            <ion-input type="email" [(ngModel)]="email"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating">Contraseña</ion-label>
+            <ion-input type="password" [(ngModel)]="password"></ion-input>
+          </ion-item>
+
+          <ion-row>
+            <ion-col size="4">
+              <ion-item>
+                <ion-label>Día</ion-label>
+                <ion-select [(ngModel)]="dia">
+                  <ion-select-option *ngFor="let d of dias" [value]="d">{{ d }}</ion-select-option>
+                </ion-select>
+              </ion-item>
+            </ion-col>
+            <ion-col size="4">
+              <ion-item>
+                <ion-label>Mes</ion-label>
+                <ion-select [(ngModel)]="mes">
+                  <ion-select-option *ngFor="let m of meses" [value]="m">{{ m }}</ion-select-option>
+                </ion-select>
+              </ion-item>
+            </ion-col>
+            <ion-col size="4">
+              <ion-item>
+                <ion-label>Año</ion-label>
+                <ion-select [(ngModel)]="anio">
+                  <ion-select-option *ngFor="let a of anios" [value]="a">{{ a }}</ion-select-option>
+                </ion-select>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+
+          <ion-button expand="full" (click)="registrarse()">Ingresar</ion-button>
+          <p class="subtitle">¿Ya tienes una cuenta? <a href="#">Iniciá sesión acá.</a></p>
+
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
