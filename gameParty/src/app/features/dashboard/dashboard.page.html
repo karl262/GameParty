@@ -1,32 +1,27 @@
 <app-navbar></app-navbar>
 
-
 <ion-content class="ion-padding">
-  <h2 class="text-center">Anuncios Relevantes</h2>
+  <h2 class="text-center">Inicio</h2>
 
   <div class="container">
-      <app-advertisements
-        title="Oferta Especial"
-        description="Aprovecha nuestro descuento del 50% en productos seleccionados."
-        imageUrl=""
-        link="https://mi-tienda.com/ofertas"
-      />
-        <app-advertisements
-          title="Nuevo Producto"
-          description="Descubre nuestra nueva línea de productos eco-friendly."
-          imageUrl=""
-          link="https://mi-tienda.com/nuevo-producto"
-        />
-
-
-    <app-advertisements
-      title="Nueva Oferta"
-      description="Aprovecha nuestro descuento del 10% en productos seleccionados."
-      imageUrl=""
-      link="https://mi-tienda.com/nuevo-producto"
-    />
-
+    <div class="row">
+      <div class="col-md-4 col-12 mb-4" *ngFor="let game of games">
+        <div class="card custom-card" style="width: 18rem;"> 
+          <img [src]="game.img" class="card-img-top" alt="" style="height: 150px; object-fit: cover;"> 
+          <div class="card-body">
+            <h5 class="card-title">{{ game.title }}</h5>
+            <p class="card-text">Tipo: {{ game.type }}</p>
+            <p class="card-text">Jugadores requeridos: {{ game.playersRequired }}</p>
+            <p class="card-text">Tiene: {{ game.availableGames }}</p>
+            <div class="d-flex justify-content-between">
+              <button class="btn btn-success">Unirse</button>
+              <button class="btn btn-danger">Rechazar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+
   <app-footer></app-footer>
 </ion-content>
-
