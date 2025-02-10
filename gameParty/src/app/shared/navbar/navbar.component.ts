@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Input } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
@@ -8,8 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent  implements OnInit {
 
+  @Input() titulo: string = '';  // Recibe el valor de titulo
+
   constructor() { }
 
   ngOnInit() {}
-
 }

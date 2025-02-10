@@ -1,0 +1,11 @@
+.custom-icon {
+  font-size: 32px; /* Tamaño uniforme para los íconos */
+}
+
+.title-center {
+  flex-grow: 1;        /* Permite que ion-title ocupe el espacio disponible */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;  /* Asegura el centrado */
+}
