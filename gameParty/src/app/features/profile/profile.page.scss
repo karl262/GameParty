@@ -1,0 +1,84 @@
+.profile-container {
+    background: #333; // Fondo oscuro
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .title {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: left;
+    width: 80%;
+    margin-top: 20px;
+    color: white;
+  }
+  
+  .profile-header {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .profile-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: #ccc;
+    object-fit: cover;
+  }
+  
+  .gamertag-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #777;
+    border-radius: 10px;
+    padding: 5px;
+    margin-top: 10px;
+    width: 80%;
+  }
+  
+  .gamertag-input {
+    flex: 1;
+    text-align: center;
+    color: white;
+    --background: transparent;
+  }
+  
+  .profile-info {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+  }
+  
+  .label {
+    text-align: left;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 10px;
+    color: white;
+  }
+  
+  .input-field {
+    width: 100%;
+    --background: #777;
+    --color: white;
+    --placeholder-color: #bbb;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .error {
+    color: #ff4d4d;
+    font-size: 14px;
+    text-align: left;
+    width: 100%;
+    margin-top: 4px;
+  }
+  
