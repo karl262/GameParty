@@ -1,0 +1,55 @@
+.container {
+    padding: 10px;
+  }
+  
+  .custom-card {
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    padding: 5px;
+  }
+  
+  .friend-img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .friend-info {
+    font-size: 12px;
+  }
+  
+  .card-body {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    font-size: 12px;
+  }
+  
+  .card-title {
+    font-size: 15px;
+    margin-bottom: 3px;
+  }
+  
+  .card-text {
+    font-size: 15px;
+  }
+  
+  ion-button {
+    margin: 5px 0;
+    border-radius: 20px;
+  }
+
+  .text-center {
+    margin-top: 10%;
+  }
+
+  .card-dd{
+    margin:10px;
+    padding-left: 10px;
+    font-size: 15px;
+
+  }
+

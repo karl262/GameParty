@@ -30,7 +30,12 @@ const routes: Routes = [
     path: '',
     redirectTo: 'login',
     pathMatch: 'full'
+  },
+  {
+    path: 'social',
+    loadChildren: () => import('./features/social/social.module').then( m => m.SocialPageModule)
   }
+
 ];
 
 @NgModule({
