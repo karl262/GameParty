@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from '@ionic/angular';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-register',
@@ -20,14 +21,14 @@ export class RegisterPage {
     'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio',
     'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'
   ];
-  
+
   // Generar años solo para personas de 15 años en adelante
   anios: number[] = Array.from(
     { length: 100 - 15 }, // Rango para 15 años en adelante
     (_, i) => new Date().getFullYear() - (i + 15)
   );
 
-  constructor(private navCtrl: NavController) {}
+  constructor(private navCtrl: NavController, private router: Router) {}
 
   registrarse() {
     if (!this.nombre || !this.email || !this.password || !this.dia || !this.mes || !this.anio) {
@@ -98,5 +99,9 @@ export class RegisterPage {
     }
 
     return true;
+  }
+
+  redirectTo(): void {
+    this.router.navigate(['/login']);
   }
 }

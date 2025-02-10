@@ -6,6 +6,7 @@ import {NavbarComponent} from "../navbar/navbar.component";
 import {AdvertisementsComponent} from "../advertisements/advertisements.component";
 import {IonicModule} from "@ionic/angular";
 import {RouterModule} from "@angular/router";
+import {SidebarComponent} from "../sidebar/sidebar.component";
 
 
 
@@ -15,7 +16,8 @@ import {RouterModule} from "@angular/router";
     CardComponent,
     FooterComponent,
     NavbarComponent,
-    AdvertisementsComponent
+    AdvertisementsComponent,
+    SidebarComponent
   ],
   imports: [
     CommonModule,
@@ -26,7 +28,8 @@ import {RouterModule} from "@angular/router";
     CardComponent,
     FooterComponent,
     NavbarComponent,
-    AdvertisementsComponent
+    AdvertisementsComponent,
+    SidebarComponent
   ]
 })
 export class ComponentsModule { }

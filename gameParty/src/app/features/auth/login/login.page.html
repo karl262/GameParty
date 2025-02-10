@@ -2,21 +2,21 @@
   <div class="container">
     <form [formGroup]="loginForm" (click)="login()">
       <div class="mb-3">
-        <label for="user" class="form-label">Usuario o Correo</label>
+        <label for="user" class="form-label text-light">Usuario o Correo</label>
         <input id="user" type="text" formControlName="user" class="form-control" [class.is-invalid]="loginForm.get('user')?.invalid && loginForm.get('user')?.touched">
         <div *ngIf="loginForm.get('user')?.invalid && loginForm.get('user')?.touched" class="invalid-feedback">
           Correo electrónico no válido.
         </div>
       </div>
       <div class="mb-3">
-        <label for="password" class="form-label">Contraseña</label>
+        <label for="password" class="form-label text-light">Contraseña</label>
         <input id="password" type="password" formControlName="password" class="form-control" [class.is-invalid]="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
         <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" class="invalid-feedback">
           La contraseña debe tener al menos 6 caracteres.
         </div>
       </div>
-      <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid">Iniciar Sesión</button>
+      <button type="submit" class="btn btn-warning text-light" [disabled]="loginForm.invalid">Iniciar Sesión</button>
     </form>
-    <p class="mt-3">¿No tienes una cuenta? <a (click)="redirectTo()" class="text-primary">Regístrate</a></p>
+    <p class="mt-3 text-light">¿No tienes una cuenta? <a (click)="redirectTo()" class="text-primary">Regístrate</a></p>
   </div>
 </ion-content>

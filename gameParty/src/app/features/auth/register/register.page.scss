@@ -5,44 +5,44 @@ ion-content {
     align-items: center;
     height: 100vh; // Para ocupar toda la pantalla
   }
-  
+
   .register-container {
     width: 100%;
     max-width: 1200px;
     margin: auto;
   }
-  
+
   .form-container {
     background: #111; // Fondo oscuro para el formulario
     padding: 20px;
     border-radius: 10px;
     text-align: center;
   }
-  
+
   .title {
     font-size: 24px;
     font-weight: bold;
     color: #ffffff; // Verde
     margin-bottom: 10px;
   }
-  
+
   .subtitle {
     font-size: 14px;
     margin-bottom: 20px;
     color: #fff; // Texto blanco para contraste
   }
-  
+
   ion-item {
     --border-radius: 8px;
     --background: #222; // Fondo oscuro en inputs
     --color: white;
     margin-bottom: 12px;
   }
-  
+
   ion-input, ion-select {
     color: white;
   }
-  
+
   ion-button {
     background-color: #448AFF; // Azul vibrante para el botón
     color: white;
@@ -50,18 +50,18 @@ ion-content {
     margin-top: 10px;
     width: 100%;
   }
-  
+
   /* ✅ Media Queries para mejorar en distintos dispositivos */
   @media (max-width: 768px) {
     .title {
       font-size: 20px;
     }
-  
+
     .form-container {
       padding: 15px;
     }
   }
-  
+
   @media (min-width: 1024px) {
     .title {
       font-size: 26px;
@@ -73,6 +73,5 @@ ion-content {
         text-align: left;
         padding-left: 10px;
       }
-      
+
   }
-  

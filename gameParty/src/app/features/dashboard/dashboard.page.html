@@ -1,27 +1,30 @@
 <app-navbar></app-navbar>
+<app-sidebar></app-sidebar>
+<!-- Contenedor principal con `id="main-content"` para que el menú lateral funcione -->
+<div class="ion-page" id="main-content">
+  <ion-content class="ion-padding">
+    <h2 class="text-center">Inicio</h2>
 
-<ion-content class="ion-padding">
-  <h2 class="text-center">Inicio</h2>
-
-  <div class="container">
-    <div class="row">
-      <div class="col-md-4 col-12 mb-4" *ngFor="let game of games">
-        <div class="card custom-card" style="width: 18rem;"> 
-          <img [src]="game.img" class="card-img-top" alt="" style="height: 150px; object-fit: cover;"> 
-          <div class="card-body">
-            <h5 class="card-title">{{ game.title }}</h5>
-            <p class="card-text">Tipo: {{ game.type }}</p>
-            <p class="card-text">Jugadores requeridos: {{ game.playersRequired }}</p>
-            <p class="card-text">Tiene: {{ game.availableGames }}</p>
-            <div class="d-flex justify-content-between">
-              <button class="btn btn-success">Unirse</button>
-              <button class="btn btn-danger">Rechazar</button>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 col-12 mb-4" *ngFor="let game of games">
+          <div class="card custom-card" style="width: 18rem;">
+            <img [src]="game.img" class="card-img-top" alt="" style="height: 150px; object-fit: cover;">
+            <div class="card-body">
+              <h5 class="card-title">{{ game.title }}</h5>
+              <p class="card-text">Tipo: {{ game.type }}</p>
+              <p class="card-text">Jugadores requeridos: {{ game.playersRequired }}</p>
+              <p class="card-text">Tiene: {{ game.availableGames }}</p>
+              <div class="d-flex justify-content-between">
+                <button class="btn btn-success">Unirse</button>
+                <button class="btn btn-danger">Rechazar</button>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <app-footer></app-footer>
-</ion-content>
+    <app-footer></app-footer>
+  </ion-content>
+</div>
