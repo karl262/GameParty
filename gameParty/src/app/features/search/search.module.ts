@@ -3,11 +3,11 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
+
+import { SearchPageRoutingModule } from './search-routing.module';
+
+import { SearchPage } from './search.page';
 import {ComponentsModule} from "../../shared/components/components.module";
-
-import { SocialPageRoutingModule } from './social-routing.module';
-
-import { SocialPage } from './social.page';
 
 
 @NgModule({
@@ -15,9 +15,9 @@ import { SocialPage } from './social.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    SocialPageRoutingModule,
+    SearchPageRoutingModule,
     ComponentsModule
   ],
-  declarations: [SocialPage]
+  declarations: [SearchPage]
 })
-export class SocialPageModule {}
+export class SearchPageModule {}

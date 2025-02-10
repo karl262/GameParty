@@ -34,7 +34,12 @@ const routes: Routes = [
   {
     path: 'social',
     loadChildren: () => import('./features/social/social.module').then( m => m.SocialPageModule)
+  },
+  {
+    path: 'search',
+    loadChildren: () => import('./features/search/search.module').then( m => m.SearchPageModule)
   }
+
 
 ];
 

@@ -15,7 +15,7 @@ export class MenuService {
   bottomMenuItems: MenuItem[] = [
     { title: 'Inicio', icon: 'home-outline', route: '/dashboard' },
     { title: 'Social', icon: 'people-outline', route: '/social' },
-    { title: 'Buscar', icon: 'search-outline', route: '/pedidos' }
+    { title: 'Buscar', icon: 'search-outline', route: '/search' }
   ];
 
   constructor(private navCtrl: NavController) {}

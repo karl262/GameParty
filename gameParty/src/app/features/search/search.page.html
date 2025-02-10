@@ -1,0 +1,38 @@
+<app-navbar></app-navbar>
+
+<ion-content [fullscreen]="true">
+  <ion-searchbar
+    [(ngModel)]="searchTerm" 
+    (ionInput)="onSearch()" 
+    placeholder="Buscar..." 
+    debounce="300"
+    color="light">
+  </ion-searchbar>
+
+  <div class="filter-container">
+    <ion-select [(ngModel)]="selectedCategory" placeholder="Filtrar por categoría" (ionChange)="onFilterChange()">
+      <ion-select-option value="all">Todos</ion-select-option>
+      <ion-select-option value="games">Juegos</ion-select-option>
+      <ion-select-option value="players">Jugadores</ion-select-option>
+    </ion-select>
+  </div>
+
+  <div *ngIf="filteredResults.length > 0">
+    <ion-list>
+      <ion-item *ngFor="let result of filteredResults">
+        <ion-label>
+          {{ result.name }}
+          <div *ngIf="result.category === 'games'">
+            {{ result.status }}
+          </div>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+  <div *ngIf="filteredResults.length === 0">
+    <ion-item>No se encontraron resultados.</ion-item>
+  </div>
+
+
+  <app-footer></app-footer>
+</ion-content>
