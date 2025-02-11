@@ -20,4 +20,5 @@ import { SocialPage } from './social.page';
   ],
   declarations: [SocialPage]
 })
+
 export class SocialPageModule {}

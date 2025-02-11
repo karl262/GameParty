@@ -1,6 +1,17 @@
 <ion-content class="profile-container">
-  <!-- Sección del encabezado -->
-  <h2 class="title">MI PERFIL</h2>
+  <ion-row class="ion-align-items-center">
+    <ion-col size="2">
+      <!-- Botón de regresar -->
+      <ion-buttons>
+        <ion-back-button defaultHref="/dashboard"></ion-back-button>
+      </ion-buttons>
+    </ion-col>
+    <ion-col size="8" class="ion-text-center">
+      <!-- Título centrado -->
+      <h2 class="title">MI PERFIL</h2>
+    </ion-col>
+    <ion-col size="2"></ion-col> <!-- Espacio para mantener el diseño alineado -->
+  </ion-row>
 
   <!-- Imagen de perfil -->
   <div class="profile-header">
@@ -9,13 +20,13 @@
     <!-- Campo editable de GamerTag -->
     <ion-item class="gamertag-container">
       <ion-input type="text" class="gamertag-input" [(ngModel)]="gamerTag" (ionInput)="validarGamerTag()"></ion-input>
-      <ion-button size="small" (click)="guardarGamerTag()">Guardar</ion-button>
+      <ion-button color="secondary" size="small" (click)="guardarGamerTag()">Guardar</ion-button>
     </ion-item>
     <p *ngIf="gamerTag && !gamerTagValido" class="error">Solo se permiten letras, números y guiones bajos (_).</p>
   </div>
 
   <!-- Campos de información -->
-  <div class="profile-info">
+  <div class="profile-info ms-5">
     <label class="label">NOMBRE:</label>
     <ion-input type="text" fill="outline" class="input-field" [(ngModel)]="nombre" (ionInput)="validarNombre()"></ion-input>
     <p *ngIf="nombre && !nombreValido" class="error">El nombre solo puede contener letras y espacios.</p>

@@ -7,6 +7,8 @@ import {AdvertisementsComponent} from "../advertisements/advertisements.componen
 import {IonicModule} from "@ionic/angular";
 import {RouterModule} from "@angular/router";
 import {SidebarComponent} from "../sidebar/sidebar.component";
+import {GroupModalComponent} from "../group-modal/group-modal.component";
+import {FormsModule} from "@angular/forms";
 
 
 
@@ -17,19 +19,22 @@ import {SidebarComponent} from "../sidebar/sidebar.component";
     FooterComponent,
     NavbarComponent,
     AdvertisementsComponent,
-    SidebarComponent
+    SidebarComponent,
+    GroupModalComponent
   ],
   imports: [
     CommonModule,
-      IonicModule,
-      RouterModule
+    IonicModule,
+    RouterModule,
+    FormsModule
   ],
   exports: [
     CardComponent,
     FooterComponent,
     NavbarComponent,
     AdvertisementsComponent,
-    SidebarComponent
+    SidebarComponent,
+    GroupModalComponent
   ]
 })
 export class ComponentsModule { }
