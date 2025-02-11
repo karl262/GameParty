@@ -1,7 +1,62 @@
-ion-content {
-  --background: #000; // Fondo negro para diseño oscuro
+/* 🔹 Video de fondo en pantalla completa */
+.video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1; /* Para que no bloquee el contenido */
+}
+
+/* 🔹 Contenedor principal centrado */
+.login-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; // Para ocupar toda la pantalla
+  height: 100vh;
+  padding: 20px;
+}
+
+/* 🔹 Card de login transparente con efecto vidrio */
+.login-card {
+  background: rgba(255, 255, 255, 0.1); /* Transparente */
+  backdrop-filter: blur(10px); /* Efecto vidrio */
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 400px;
+}
+
+/* 🔹 Mejoras en los inputs */
+.form-control {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+}
+
+/* 🔹 Placeholder en color más visible */
+.form-control::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* 🔹 Botón con mejor estilo */
+.btn-warning {
+  background-color: #ffc107;
+  border: none;
+  transition: 0.3s;
+}
+
+.btn-warning:hover {
+  background-color: #ffca2c;
+}
+
+/* 🔹 Enlace estilizado */
+.text-warning {
+  cursor: pointer;
+  text-decoration: none;
+}
+.text-warning:hover {
+  text-decoration: underline;
 }

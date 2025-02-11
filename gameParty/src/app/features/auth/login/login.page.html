@@ -1,22 +1,42 @@
 <ion-content class="ion-padding">
-  <div class="container">
-    <form [formGroup]="loginForm" (click)="login()">
-      <div class="mb-3">
-        <label for="user" class="form-label text-light">Usuario o Correo</label>
-        <input id="user" type="text" formControlName="user" class="form-control" [class.is-invalid]="loginForm.get('user')?.invalid && loginForm.get('user')?.touched">
-        <div *ngIf="loginForm.get('user')?.invalid && loginForm.get('user')?.touched" class="invalid-feedback">
-          Correo electrónico no válido.
+
+  <video autoplay loop muted playsinline class="video-background">
+    <source src="assets/videos/video_background.mp4" type="video/mp4">
+    Tu navegador no soporta videos.
+  </video>
+
+  <div class="login-container">
+    <div class="login-card">
+      <form [formGroup]="loginForm" (ngSubmit)="login()">
+        <h3 class="text-light text-center mb-4">Iniciar Sesión</h3>
+
+        <div class="mb-3">
+          <label for="user" class="form-label text-light">Usuario o Correo</label>
+          <input id="user" type="text" formControlName="user" class="form-control"
+                 [class.is-invalid]="loginForm.get('user')?.invalid && loginForm.get('user')?.touched">
+          <div *ngIf="loginForm.get('user')?.invalid && loginForm.get('user')?.touched" class="invalid-feedback">
+            Correo electrónico no válido.
+          </div>
         </div>
-      </div>
-      <div class="mb-3">
-        <label for="password" class="form-label text-light">Contraseña</label>
-        <input id="password" type="password" formControlName="password" class="form-control" [class.is-invalid]="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
-        <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" class="invalid-feedback">
-          La contraseña debe tener al menos 6 caracteres.
+
+        <div class="mb-3">
+          <label for="password" class="form-label text-light">Contraseña</label>
+          <input id="password" type="password" formControlName="password" class="form-control"
+                 [class.is-invalid]="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+          <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" class="invalid-feedback">
+            La contraseña debe tener al menos 6 caracteres.
+          </div>
         </div>
-      </div>
-      <button type="submit" class="btn btn-warning text-light" [disabled]="loginForm.invalid">Iniciar Sesión</button>
-    </form>
-    <p class="mt-3 text-light">¿No tienes una cuenta? <a (click)="redirectTo()" class="text-primary">Regístrate</a></p>
+
+        <button type="submit" class="btn btn-warning text-light w-100" [disabled]="loginForm.invalid">
+          Iniciar Sesión
+        </button>
+
+        <p class="mt-3 text-light text-center">
+          ¿No tienes una cuenta?
+          <a (click)="redirectTo()" class="text-warning">Regístrate</a>
+        </p>
+      </form>
+    </div>
   </div>
 </ion-content>
