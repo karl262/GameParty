@@ -22,8 +22,6 @@
         <ion-col size="3">
           <ion-button expand="full" color="tertiary" (click)="openGameModal()">+</ion-button>
         </ion-col>
-
-
       </ion-row>
     </div>
 
@@ -49,12 +47,14 @@
     <div class="container" *ngIf="selectedSection === 'games'">
       <h3 class="text-center">Partidas Disponibles</h3>
       <div class="row">
-        <div class="col-12 mb-3" *ngFor="let game of games">
+        <div class="col-12 mb-3" *ngFor="let game of games; let i = index">
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">{{ game.name }}</h5>
               <p class="card-dd">Jugadores en espera: {{ game.waitingPlayers }} / {{ game.maxPlayers }}</p>
               <ion-button class="ppp" expand="full" color="success">Unirse a la partida</ion-button>
+              <ion-button class="ppp" expand="full" color="warning" (click)="openGameModal(game)">Editar</ion-button>
+              <ion-button class="ppp" expand="full" color="danger" (click)="deleteGame(i)">Eliminar</ion-button>
             </div>
           </div>
         </div>

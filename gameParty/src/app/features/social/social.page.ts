@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {ModalController} from "@ionic/angular";
-import { GroupModalComponent } from "../../shared/group-modal/group-modal.component";
+import { ModalController } from '@ionic/angular';
+import { GroupModalComponent } from '../../shared/group-modal/group-modal.component';
 
 @Component({
   selector: 'app-social',
@@ -35,17 +35,28 @@ export class SocialPage implements OnInit {
     this.selectedSection = section;
   }
 
-  // 📌 Método para abrir el modal de creación de partidas
-  async openGameModal() {
+  // 📌 Método para abrir el modal de creación/edición de partidas
+  async openGameModal(game: any = null) {
     const modal = await this.modalController.create({
-      component: GroupModalComponent
+      component: GroupModalComponent,
+      componentProps: { game: game || { name: '', waitingPlayers: 0, maxPlayers: 0, image: '', type: '', mode: '' } }
     });
 
     await modal.present();
 
     const { data } = await modal.onWillDismiss(); // Recibir datos al cerrar el modal
     if (data) {
-      this.addGame(data);
+      if (game) {
+        // Editar partida existente
+        const index = this.games.indexOf(game);
+        if (index > -1) {
+          this.games[index] = data;
+        }
+      } else {
+        // Agregar nueva partida
+        this.addGame(data);
+      }
+      localStorage.setItem('games', JSON.stringify(this.games));
     }
   }
 
@@ -74,5 +85,4 @@ export class SocialPage implements OnInit {
     this.games.splice(index, 1);
     localStorage.setItem('games', JSON.stringify(this.games));
   }
-
-  }
+}

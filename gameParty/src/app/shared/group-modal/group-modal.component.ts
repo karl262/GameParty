@@ -1,5 +1,5 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {ModalController} from "@ionic/angular";
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-group-modal',
@@ -7,7 +7,7 @@ import {ModalController} from "@ionic/angular";
   styleUrls: ['./group-modal.component.scss'],
   standalone: false
 })
-export class GroupModalComponent  implements OnInit {
+export class GroupModalComponent implements OnInit {
 
   @Output() gameAdded = new EventEmitter<any>(); // Emitirá el nuevo juego agregado
 
@@ -19,7 +19,8 @@ export class GroupModalComponent  implements OnInit {
     currentPlayers: '',
     image: ''
   };
-  constructor(private modalController:  ModalController) {}
+
+  constructor(private modalController: ModalController) {}
 
   closeModal() {
     this.modalController.dismiss();
@@ -31,7 +32,5 @@ export class GroupModalComponent  implements OnInit {
     }
   }
 
-
   ngOnInit() {}
-
 }
