@@ -20,7 +20,7 @@
     <!-- Campo editable de GamerTag -->
     <ion-item class="gamertag-container">
       <ion-input type="text" class="gamertag-input" [(ngModel)]="gamerTag" (ionInput)="validarGamerTag()"></ion-input>
-      <ion-button color="secondary" size="small" (click)="guardarGamerTag()">Guardar</ion-button>
+      <ion-button color="warning" size="small" (click)="guardarGamerTag()">Guardar</ion-button>
     </ion-item>
     <p *ngIf="gamerTag && !gamerTagValido" class="error">Solo se permiten letras, números y guiones bajos (_).</p>
   </div>
@@ -40,6 +40,6 @@
     <p *ngIf="telefono && !validarTelefono(telefono)" class="error">El teléfono debe tener exactamente 10 dígitos.</p>
 
     <!-- Botón de actualizar -->
-    <ion-button expand="full" (click)="actualizarPerfil()">Guardar</ion-button>
+    <ion-button color="warning" expand="full" (click)="actualizarPerfil()">Guardar</ion-button>
   </div>
 </ion-content>
