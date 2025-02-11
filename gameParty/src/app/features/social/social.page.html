@@ -1,7 +1,7 @@
 <app-navbar></app-navbar>
 <app-sidebar></app-sidebar>
 
-<div class="ion-page" id="main-content">
+<div class="ion-page mt-5" id="main-content">
   <ion-content [fullscreen]="true">
     <h2 class="text-center">SOCIAL</h2>
 
@@ -48,18 +48,30 @@
       <h3 class="text-center">Partidas Disponibles</h3>
       <div class="row">
         <div class="col-12 mb-3" *ngFor="let game of games; let i = index">
-          <div class="card">
+          <div class="card shadow-sm p-3">
             <div class="card-body">
-              <h5 class="card-title">{{ game.name }}</h5>
-              <p class="card-dd">Jugadores en espera: {{ game.waitingPlayers }} / {{ game.maxPlayers }}</p>
-              <ion-button class="ppp" expand="full" color="success">Unirse a la partida</ion-button>
-              <ion-button class="ppp" expand="full" color="warning" (click)="openGameModal(game)">Editar</ion-button>
-              <ion-button class="ppp" expand="full" color="danger" (click)="deleteGame(i)">Eliminar</ion-button>
+              <div class="d-flex justify-content-between align-items-center flex-wrap">
+                <div>
+                  <h5 class="card-title mb-1">{{ game.name }}</h5>
+                  <p class="card-text text-muted">
+                    Jugadores en espera:
+                    <strong>{{ game.waitingPlayers || 0 }}</strong> /
+                    <strong>{{ game.maxPlayers || '?' }}</strong>
+                  </p>
+                </div>
+                <div class="d-flex gap-2 flex-wrap mt-2">
+                  <ion-button class="btn-sm flex-grow-1" color="warning">Unirse a la partida</ion-button>
+                  <ion-button class="btn-sm flex-grow-1" color="warning" (click)="openGameModal(game)">Editar</ion-button>
+                  <ion-button class="btn-sm flex-grow-1" color="warning" (click)="deleteGame(i)">Eliminar</ion-button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+
+
 
     <div class="container" *ngIf="selectedSection === 'chats'">
       <h3 class="text-center">Chats Disponibles</h3>

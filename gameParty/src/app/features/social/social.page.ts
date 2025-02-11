@@ -35,32 +35,33 @@ export class SocialPage implements OnInit {
     this.selectedSection = section;
   }
 
-  // 📌 Método para abrir el modal de creación/edición de partidas
   async openGameModal(game: any = null) {
     const modal = await this.modalController.create({
       component: GroupModalComponent,
-      componentProps: { game: game || { name: '', waitingPlayers: 0, maxPlayers: 0, image: '', type: '', mode: '' } }
+      componentProps: {
+        game: game || { name: '', waitingPlayers: 0, maxPlayers: 0, image: '', type: '', mode: '' }
+      }
     });
 
     await modal.present();
 
     const { data } = await modal.onWillDismiss(); // Recibir datos al cerrar el modal
+    console.log("Datos recibidos del modal:", data); // 🔍 Verifica los datos antes de guardar
+
     if (data) {
       if (game) {
-        // Editar partida existente
         const index = this.games.indexOf(game);
         if (index > -1) {
-          this.games[index] = data;
+          this.games[index] = { ...this.games[index], ...data }; // 🔥 Mezcla los datos sin borrar valores previos
         }
       } else {
-        // Agregar nueva partida
         this.addGame(data);
       }
       localStorage.setItem('games', JSON.stringify(this.games));
     }
   }
 
-  // 📌 Método para agregar una partida a la lista y guardarla en LocalStorage
+
   addGame(game: any) {
     this.games.push(game);
     localStorage.setItem('games', JSON.stringify(this.games));
